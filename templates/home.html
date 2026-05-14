@@ -1,190 +1,46 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>EduSphere | Home</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-    <style>
-        *{
-            margin:0;
-            padding:0;
-            box-sizing:border-box;
-            font-family:Arial, Helvetica, sans-serif;
-        }
+{% extends "base.html" %}
 
-        body{
-            background:#f4f9ff;
-            color:#222;
-        }
+{% block title %}EduSphere | Home{% endblock %}
 
-        nav{
-            display:flex;
-            justify-content:space-between;
-            align-items:center;
-            padding:20px 8%;
-            background:white;
-            box-shadow:0 2px 10px rgba(0,0,0,0.1);
-            position:sticky;
-            top:0;
-            z-index:100;
-        }
-
-        nav h1{
-            color:#2563eb;
-        }
-
-        nav ul{
-            display:flex;
-            list-style:none;
-            gap:25px;
-        }
-
-        nav ul li a{
-            text-decoration:none;
-            color:#333;
-            font-weight:bold;
-        }
-
-        .hero{
-            height:90vh;
-            display:flex;
-            align-items:center;
-            justify-content:space-between;
-            padding:0 8%;
-            background:linear-gradient(to right,#dbeafe,#eff6ff);
-        }
-
-        .hero-text{
-            width:50%;
-        }
-
-        .hero-text h2{
-            font-size:55px;
-            margin-bottom:20px;
-            color:#1e3a8a;
-        }
-
-        .hero-text p{
-            font-size:18px;
-            line-height:1.8;
-            margin-bottom:30px;
-        }
-
-        .btn{
-            padding:14px 30px;
-            border:none;
-            border-radius:10px;
-            background:#2563eb;
-            color:white;
-            font-size:16px;
-            cursor:pointer;
-        }
-
-        .hero img{
-            width:500px;
-        }
-
-        .features{
-            padding:80px 8%;
-        }
-
-        .features h2{
-            text-align:center;
-            margin-bottom:50px;
-            font-size:40px;
-        }
-
-        .cards{
-            display:grid;
-            grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-            gap:30px;
-        }
-
-        .card{
-            background:white;
-            padding:30px;
-            border-radius:20px;
-            text-align:center;
-            box-shadow:0 5px 20px rgba(0,0,0,0.1);
-            transition:0.3s;
-        }
-
-        .card:hover{
-            transform:translateY(-10px);
-        }
-
-        .card i{
-            font-size:40px;
-            color:#2563eb;
-            margin-bottom:20px;
-        }
-
-        footer{
-            background:#1e3a8a;
-            color:white;
-            text-align:center;
-            padding:25px;
-            margin-top:50px;
-        }
-    </style>
-</head>
-<body>
-
-<nav>
-    <h1>EduSphere</h1>
-
-    <ul>
-        <li><a href="home.html">Home</a></li>
-        <li><a href="about.html">About</a></li>
-        <li><a href="courses.html">Courses</a></li>
-        <li><a href="contact.html">Contact</a></li>
-    </ul>
-</nav>
-
+{% block content %}
 <section class="hero">
     <div class="hero-text">
-        <h2>Learn Skills That Shape Your Future</h2>
+        <h1>Learn Skills That Shape Your Future</h1>
         <p>
             Build your career with premium online courses in Development,
-            AI/ML, DevOps, Cloud, and Data Science.
+            AI/ML, DevOps, Cloud, and Data Science. Join our community of 
+            learners and transform your career path today.
         </p>
-
-        <button class="btn">Explore Courses</button>
+        <a href="{{ url_for('courses') }}" class="btn">Explore Courses</a>
     </div>
 
-    <img src="https://cdn-icons-png.flaticon.com/512/3135/3135755.png" alt="education image">
+    <div class="hero-image">
+        <!-- Using a more modern illustration from Unsplash or kept the original but styled better -->
+        <img src="https://cdn-icons-png.flaticon.com/512/3135/3135755.png" alt="education illustration">
+    </div>
 </section>
 
 <section class="features">
-    <h2>Why Choose Us?</h2>
+    <h2 class="section-title">Why Choose Us?</h2>
 
     <div class="cards">
-
         <div class="card">
             <i class="fa-solid fa-laptop-code"></i>
             <h3>Practical Learning</h3>
-            <p>Hands-on real-world projects for better understanding.</p>
+            <p>Hands-on real-world projects designed to prepare you for the industry.</p>
         </div>
 
         <div class="card">
             <i class="fa-solid fa-certificate"></i>
             <h3>Certification</h3>
-            <p>Industry-recognized certificates after completion.</p>
+            <p>Industry-recognized certificates awarded upon course completion.</p>
         </div>
 
         <div class="card">
             <i class="fa-solid fa-users"></i>
             <h3>Community</h3>
-            <p>Join an active learning and mentorship community.</p>
+            <p>Join an active learning and mentorship community to network and grow.</p>
         </div>
-
     </div>
 </section>
-
-<footer>
-    <p>© 2026 EduSphere. All Rights Reserved.</p>
-</footer>
-
-</body>
-</html>
+{% endblock %}

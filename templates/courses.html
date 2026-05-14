@@ -1,73 +1,45 @@
-<!DOCTYPE html>
-.course-card img{
-    width:100%;
-    height:200px;
-    object-fit:cover;
-}
+{% extends "base.html" %}
 
-.course-content{
-    padding:25px;
-}
+{% block title %}EduSphere | Courses{% endblock %}
 
-.course-content h3{
-    margin-bottom:15px;
-}
-
-.course-content p{
-    line-height:1.6;
-}
-
-.btn{
-    margin-top:20px;
-    display:inline-block;
-    background:#2563eb;
-    color:white;
-    padding:10px 20px;
-    border-radius:10px;
-    text-decoration:none;
-}
-</style>
-</head>
-<body>
-
-<div class="header">
-    <h1>Popular Courses</h1>
-    <p>Choose your path and start learning today.</p>
-</div>
+{% block content %}
+<section style="padding: 60px 8% 0;">
+    <h2 class="section-title" style="margin-bottom: 10px;">Popular Courses</h2>
+    <p style="text-align: center; color: var(--text-muted); font-size: 1.1rem;">Choose your path and start learning today.</p>
+</section>
 
 <div class="course-container">
-
     <div class="course-card">
-        <img src="https://images.unsplash.com/photo-1515879218367-8466d910aaa4">
-
+        <div class="course-image-wrapper">
+            <img src="https://images.unsplash.com/photo-1515879218367-8466d910aaa4?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Full Stack">
+        </div>
         <div class="course-content">
             <h3>Full Stack Development</h3>
-            <p>Learn frontend, backend, APIs, databases, and deployment.</p>
-            <a href="#" class="btn">Enroll</a>
+            <p>Learn frontend, backend, APIs, databases, and modern deployment strategies.</p>
+            <a href="#" class="btn">Enroll Now</a>
         </div>
     </div>
 
     <div class="course-card">
-        <img src="https://images.unsplash.com/photo-1555949963-aa79dcee981c">
-
+        <div class="course-image-wrapper">
+            <img src="https://images.unsplash.com/photo-1555949963-aa79dcee981c?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="AI & ML">
+        </div>
         <div class="course-content">
             <h3>AI & Machine Learning</h3>
-            <p>Master Python, ML algorithms, deep learning, and AI tools.</p>
-            <a href="#" class="btn">Enroll</a>
+            <p>Master Python, ML algorithms, deep learning, and practical AI tools.</p>
+            <a href="#" class="btn">Enroll Now</a>
         </div>
     </div>
 
     <div class="course-card">
-        <img src="https://images.unsplash.com/photo-1451187580459-43490279c0fa">
-
+        <div class="course-image-wrapper">
+            <img src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="DevOps">
+        </div>
         <div class="course-content">
             <h3>DevOps & Kubernetes</h3>
-            <p>Learn CI/CD, Docker, Kubernetes, Jenkins, and ArgoCD.</p>
-            <a href="#" class="btn">Enroll</a>
+            <p>Learn CI/CD, Docker, Kubernetes, Jenkins, GitOps, and ArgoCD.</p>
+            <a href="#" class="btn">Enroll Now</a>
         </div>
     </div>
-
 </div>
-
-</body>
-</html>
+{% endblock %}
