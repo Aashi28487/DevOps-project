@@ -1,0 +1,41 @@
+devOps mini project 
+
+flask application
+conterization ---docker (2 stage dockerfile)
+use Kubernetes deployement service & ingress(nginx)
+setup ngnix in docker with Kubernetes
+
+kubectl port-forward svc/flask-web-app 8080:80
+
+AGROCD pswd : 3FvzjA1Ivya6SmE8
+
+kubectl port-forward svc/flask-web-app 8080:80
+
+
+kubectl port-forward svc/argocd-server -n argocd 8081:443  
+
+kubectl port-forward svc/flask-web-app 8080:80 
+
+kubectl -n argocd get secret argocd-initial-admin-secret -o jsonpath="{.data.password}" | % { [System.Text.Encoding]::UTF8.GetString([System.Convert]::FromBase64String($_)) }
+
+
+EC2 for scalability
+IAM to deploy website with security 
+data insert & retrieve by cost saving -- lambda & rds
+
+like we have a AWS in which multiple region has running multiple application which have IP  adreses so that IP address are limite there is a chance of clashing merging etc so what AWS said VPC(vitual private cloud) banalo 
+
+subnets you have a big subnet divide it into private and public give public access to user private accesss is safe data safe etc
+ we have internet gateway(for public) to go through public and for private we have nat gaway
+which we have to go should decide by route tables
+
+
+vpc - > create vpc -> vpc only or vpc & more (which show full network archi)-> subnets & crate that -> ec2 instance launching ->connect ec2(fails bcoz subnet is public but internet gateway is not assigned so behave as  private till ) - > internet gateway  -> route table->route tables - > subnet association -> enbling public auto ip address -> internet gateway -> attach to vpc
+
+for production vpc only 
+Classless Inter-Domain Routing (CIDR) is a flexible method for allocating IP addresses and routing packets, designed to replace the outdated class-based (A, B, C) system. It enables efficient IP address usage by allowing networks to be subdivided into variable sizes, reducing routing table sizes and slowing the depletion of IPv4 addresses. 
+s
+use cidr to allocate ip address 
+5 ip address keps by aws for servicing etc 
+
+problem to create private vpc because mistakes happened 256 ip pure public ko de diye 
